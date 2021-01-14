@@ -1,11 +1,13 @@
 import './Array.css';
-import React, { useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { TextField, Fab } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add' ;
 
-function Array( { arr } ) {
+function Array( { arrOriginal, setArr } ) {
 
-    const [ array, setArray ] = useState(arr);
+    const array = arrOriginal;
+    const setArray = setArr;
+
     let latestBox = useRef(null);
 
     function changeNumber(i, e) {
@@ -23,6 +25,7 @@ function Array( { arr } ) {
 
     }
     function newNumber() {
+        console.log(array);
         const arr = [...array];
         if ( arr.length!=0 && arr[arr.length-1].value === null ) {
             //box

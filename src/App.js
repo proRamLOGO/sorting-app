@@ -1,13 +1,13 @@
 // import logo from './logo.svg';
 import React, { useState } from 'react';
 import './App.css';
-import TextField from '@material-ui/core/TextField';
 import Array from './Array' ;
 
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
 
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Loader from 'react-loader-spinner'
@@ -42,9 +42,20 @@ function App() {
         </Toolbar>
       </AppBar >
       
-      <Array arr={array} />
+      <Array arrOriginal={array} setArr={setArray} />
 
-
+      <Button variant="contained" color="primary" className="submitButton"
+        onClick={ () => { 
+          const sa = [...array];
+          sa.sort( (a,b) => (a.value > b.value) ? 1 : ((b.value > a.value) ? -1 : 0) );
+          {/* for ( let i = 0; i < sa.length ; i++ ) {
+            sa[i] = {value:sa[i]}
+          } */}
+          console.log(sa);
+          setArray(sa);
+        }}>
+        SORT!
+      </Button>      
 
     </div>
     </>
