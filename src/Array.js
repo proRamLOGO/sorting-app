@@ -1,9 +1,23 @@
 import './Array.css';
 import React, { useRef } from 'react';
-import { TextField, Fab } from '@material-ui/core';
+import { TextField, Fab, Tooltip } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add' ;
 
-function Array( { arrOriginal, setArr } ) {
+function NumberTeller( {array} ) {
+    console.log(array.length);
+    if ( array.length>1 ) {
+        return (
+            <h3> Total {array.length} numbers. </h3> 
+        )
+    } else {
+        return (
+            <>
+            </>
+        )
+    }
+}
+
+function Array( { arrOriginal, setArr, dispList, setDispList } ) {
 
     const array = arrOriginal;
     const setArray = setArr;
@@ -14,21 +28,12 @@ function Array( { arrOriginal, setArr } ) {
         const arr = [...array];
         arr[i].value = parseInt(e.target.value);
         // console.log(arr[i].value);
-        if (arr[i].value === '') {
-            arr.splice(i,1); 
-        } else {
-            console.log(i);
-            setArray(arr);
-            // latestBox.current.label = "";
-            console.log(latestBox.current);
-        }
+        setArray(arr);
 
     }
-    function newNumber() {
-        console.log(array);
+    function newNumber(e) {
         const arr = [...array];
-        if ( arr.length!=0 && arr[arr.length-1].value === null ) {
-            //box
+        if ( arr.length!==0 && arr[arr.length-1].value === null ) {
             console.log("ff");
         } else {
             arr.push({value:null}); 
@@ -44,8 +49,10 @@ function Array( { arrOriginal, setArr } ) {
     return(
         <div className="Array">
 
-            <h1>Add Numbers</h1>
-            <br /> <br />
+            <h1>Add Numbers to Sort</h1>
+            <br /> 
+            <NumberTeller array={array} />
+            <br />
 
             {array.map( (num,i) => {
                     return (
@@ -56,11 +63,13 @@ function Array( { arrOriginal, setArr } ) {
                             variant="outlined"
                             className="number"
                             inputRef={latestBox}
+                            autoFocus={true}
                             inputProps={{
                                 style: { textAlign: "center" }
                             }}
-                            label="Number"
+                            label={"Number "+(i+1)}
                             onChange={ (e) => {
+                                setDispList(false);
                                 changeNumber(i,e);
                             }}
                         / >
@@ -70,10 +79,11 @@ function Array( { arrOriginal, setArr } ) {
 
             <br />
 
-            {/* document.getElementById("num"+(array.length-1)).focus(); */}
-            <Fab color="primary" aria-label="new-number" onClick={newNumber} >
-                <AddIcon />
-            </Fab>
+            <Tooltip title="Add a new number" aria-label="add">
+                <Fab color="primary" aria-label="new-number" onClick={newNumber} >
+                    <AddIcon />
+                </Fab>
+            </Tooltip>
 
         </div>
     )
