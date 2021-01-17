@@ -18,6 +18,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css"
 import Loader from 'react-loader-spinner'
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,10 +44,14 @@ const useStyles = makeStyles((theme) => ({
     // color: #fff ;
     right: 0,
   },
-  appBarA: {    
+  anchor: {    
     textDecoration: 'none',
     color: '#fff',
     fontWeight: 'bold',
+    transition: 'color 0.1s linear' ,
+    '&:hover': {
+      color: 'yellow'
+    },
   },
 }));
 
@@ -55,6 +60,7 @@ function App() {
   const [array, setArray] = useState([]);
   const [dispList, setDispList] = useState(false);
   const [open, setOpen] = React.useState(false);
+  const [sortAvailable, setSortAvailable] = useState(true);
 
   const handleClose = () => {
     setOpen(false);
@@ -63,22 +69,22 @@ function App() {
   return (
     <>
 
-    <Loader type="BallTriangle" className="preLoader" color="#00BFFF" height={80} width={80} timeout={1000} />
-
+    <Loader type="BallTriangle" className="preLoader" color="#00BFFF" height={80} width={80} timeout={3000} />
     <div className="App">
       <AppBar position="static" className={classes.appBar}>
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            AppSORT - By <a className={classes.appBarA} href="http://proramlogo.github.io/">Shubh Bansal</a>
+            AppSORT - By <a className={classes.anchor} href="http://proramlogo.github.io/">Shubh Bansal</a>
           </Typography>
+          <a classname={classes.anchor} href="http://github.com/proRamLOGO/sorting-app"><GitHubIcon style={{ color: '#fff'}}/></a>
         </Toolbar>
       </AppBar >
       
-      <Array arrOriginal={array} setArr={setArray} dispList={dispList} setDispList={setDispList} />
+      <Array arrOriginal={array} setArr={setArray} dispList={dispList} setDispList={setDispList} toggleSortButton={setSortAvailable} />
 
       <ListOfNumbers array={array} dispList={dispList} setDispList={setDispList} />
 
-      <Button variant="contained" color="primary" className={classes.submitButton}
+      <Button disabled={sortAvailable} variant="contained" color="primary" className={classes.submitButton}
         onClick={ () => { 
           const sa = [...array];
           for ( var i=0 ; i<sa.length ; i++ ) {

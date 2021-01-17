@@ -17,7 +17,7 @@ function NumberTeller( {array} ) {
     }
 }
 
-function Array( { arrOriginal, setArr, dispList, setDispList } ) {
+function Array( { arrOriginal, setArr, dispList, setDispList, toggleSortButton } ) {
 
     const array = arrOriginal;
     const setArray = setArr;
@@ -39,6 +39,7 @@ function Array( { arrOriginal, setArr, dispList, setDispList } ) {
             arr.push({value:null}); 
             setArray(arr);
         }
+        toggleSortButton(false);
     }
     function removeNumber(i) {
         const arr = [...array];
