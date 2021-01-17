@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/sorting-app/static/css/main.37c244cd.chunk.css",
-    "main.js": "/sorting-app/static/js/main.43535f08.chunk.js",
-    "main.js.map": "/sorting-app/static/js/main.43535f08.chunk.js.map",
-    "runtime-main.js": "/sorting-app/static/js/runtime-main.8e2bc67b.js",
-    "runtime-main.js.map": "/sorting-app/static/js/runtime-main.8e2bc67b.js.map",
+    "main.css": "/sorting-app/static/css/main.5a6b1f90.chunk.css",
+    "main.js": "/sorting-app/static/js/main.fa53e0d2.chunk.js",
+    "main.js.map": "/sorting-app/static/js/main.fa53e0d2.chunk.js.map",
+    "runtime-main.js": "/sorting-app/static/js/runtime-main.9450226a.js",
+    "runtime-main.js.map": "/sorting-app/static/js/runtime-main.9450226a.js.map",
     "static/css/2.0f52be0d.chunk.css": "/sorting-app/static/css/2.0f52be0d.chunk.css",
-    "static/js/2.58f220ae.chunk.js": "/sorting-app/static/js/2.58f220ae.chunk.js",
-    "static/js/2.58f220ae.chunk.js.map": "/sorting-app/static/js/2.58f220ae.chunk.js.map",
-    "static/js/3.feee8e6a.chunk.js": "/sorting-app/static/js/3.feee8e6a.chunk.js",
-    "static/js/3.feee8e6a.chunk.js.map": "/sorting-app/static/js/3.feee8e6a.chunk.js.map",
+    "static/js/2.0dc4aa02.chunk.js": "/sorting-app/static/js/2.0dc4aa02.chunk.js",
+    "static/js/2.0dc4aa02.chunk.js.map": "/sorting-app/static/js/2.0dc4aa02.chunk.js.map",
+    "static/js/3.3f2a4d41.chunk.js": "/sorting-app/static/js/3.3f2a4d41.chunk.js",
+    "static/js/3.3f2a4d41.chunk.js.map": "/sorting-app/static/js/3.3f2a4d41.chunk.js.map",
     "index.html": "/sorting-app/index.html",
     "static/css/2.0f52be0d.chunk.css.map": "/sorting-app/static/css/2.0f52be0d.chunk.css.map",
-    "static/css/main.37c244cd.chunk.css.map": "/sorting-app/static/css/main.37c244cd.chunk.css.map",
-    "static/js/2.58f220ae.chunk.js.LICENSE.txt": "/sorting-app/static/js/2.58f220ae.chunk.js.LICENSE.txt"
+    "static/css/main.5a6b1f90.chunk.css.map": "/sorting-app/static/css/main.5a6b1f90.chunk.css.map",
+    "static/js/2.0dc4aa02.chunk.js.LICENSE.txt": "/sorting-app/static/js/2.0dc4aa02.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.8e2bc67b.js",
+    "static/js/runtime-main.9450226a.js",
     "static/css/2.0f52be0d.chunk.css",
-    "static/js/2.58f220ae.chunk.js",
-    "static/css/main.37c244cd.chunk.css",
-    "static/js/main.43535f08.chunk.js"
+    "static/js/2.0dc4aa02.chunk.js",
+    "static/css/main.5a6b1f90.chunk.css",
+    "static/js/main.fa53e0d2.chunk.js"
   ]
 }
